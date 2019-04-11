@@ -20,8 +20,6 @@ install:
 script:
   - go test -v -covermode=atomic -coverprofile=coverage.out
 
-go_import_path: github.com/shuza/GoTravis
 
-
-notification:
+notifications:
   email: false
