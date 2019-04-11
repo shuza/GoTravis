@@ -1,5 +1,6 @@
 language: go
 sudo: false
+
 go:
   - 1.10.x
   - 1.11.x
@@ -11,7 +12,7 @@ matrix:
   - go: 1.11.x
     env: GO111MODULE=on
   - go: 1.12.x
-      env: GO111MODULE=on
+    env: GO111MODULE=on
 
 install:
   - if [[ "${GO111MODULE}" = "on" ]]; then go mod download; else go get -t -v ./...; fi
