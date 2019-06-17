@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  run_test:
+    docker:
+      - image: circleci/golang:1.12
+    working_directory: /GoTravis
+    steps:
+      - checkout
+      - run: go mod vendor
+      - run: go test -v -mod=vendor ./...
+
+  docker_push:
+    docker:
+      - image: circleci/buildpack-deps:stretch
+    steps:
+      - checkout
+      - run: echo
+      - run: docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
+      - run: docker build -t shuzasa/go-travis:latest
+      - run: docker push shuzasa/go-travis:latest
+
+workflows:
+  version: 2
+  build-push:
+    jobs:
+      - run_test
+      - docker_push
