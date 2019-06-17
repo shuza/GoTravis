@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run: echo
       - run: docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
-      - run: docker build -t shuzasa/go-travis:latest
+      - run: docker build -t shuzasa/go-travis:latest .
       - run: docker push shuzasa/go-travis:latest
 
 workflows:
