@@ -1,6 +1,6 @@
 FROM golang
-COPY . /my-app
-WORKDIR /my-app
+COPY . /GoTravis
+WORKDIR /GoTravis
 RUN go mod vendor
 ENTRYPOINT go run main.go
 EXPOSE 8080

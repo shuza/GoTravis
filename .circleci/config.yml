@@ -3,7 +3,6 @@ jobs:
   run_test:
     docker:
       - image: circleci/golang:1.11
-    working_directory: /my-app
     steps:
       - checkout
       - run: go mod vendor
