@@ -1,10 +1,10 @@
 package main
 
 import (
-	"testing"
-	"net/http/httptest"
 	"GoTravis/api"
 	"github.com/stretchr/testify/assert"
+	"net/http/httptest"
+	"testing"
 )
 
 /**
@@ -21,5 +21,5 @@ func TestIndexHandler(t *testing.T) {
 	resp := httptest.NewRecorder()
 
 	api.GetRoutes().ServeHTTP(resp, req)
-	assert.Equal(t, 200, resp.Code)
+	assert.Equal(t, 400, resp.Code)
 }
