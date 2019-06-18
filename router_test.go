@@ -21,5 +21,5 @@ func TestIndexHandler(t *testing.T) {
 	resp := httptest.NewRecorder()
 
 	api.GetRoutes().ServeHTTP(resp, req)
-	assert.Equal(t, 400, resp.Code)
+	assert.Equal(t, 200, resp.Code)
 }
