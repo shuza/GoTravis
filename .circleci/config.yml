@@ -23,4 +23,9 @@ workflows:
   build-push:
     jobs:
       - run_test
-      - docker_push
+      - docker_push:
+          requires:
+            - run_test
+          filters:
+            branches:
+              only: master
