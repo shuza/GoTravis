@@ -13,5 +13,5 @@ import "GoTravis/api"
 
 func main() {
 	r := api.GetRoutes()
-	r.Run(":8000")
+	r.Run(":8080")
 }

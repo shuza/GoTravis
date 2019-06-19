@@ -1,10 +1,10 @@
 package main
 
 import (
-	"testing"
-	"net/http/httptest"
 	"GoTravis/api"
 	"github.com/stretchr/testify/assert"
+	"net/http/httptest"
+	"testing"
 )
 
 /**
