@@ -1,0 +1,1 @@
+# Common CI CD practise
